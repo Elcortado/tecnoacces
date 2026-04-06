@@ -28,6 +28,31 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "tUjsoNsVjSrluTUMD",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_qedll4t', 'template_qua5tbg', this)
+                .then(() => {
+                        alert ('MENSAJE ENVIADO!');
+                        document.getElementById('contact-form').reset();
+                    }, (error) => {
+                        alert('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+
 </head>
 
 <body class="index-page">
@@ -62,10 +87,10 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="#hero" class="active">Inicio</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#portfolio">Categorías</a></li>
             <li><a href="#about">Nosotros</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#contact">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -87,7 +112,7 @@
             <h1>Tecno<span>Acces</span></h1>
             <p><b>Accesorios tecnológicos para tu día a día</b></p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started"><b>Ir a la tienda online</b></a>
+              <a href="https://wa.link/xfzeci" class="btn-get-started"><b>Tienda</b></a>
             </div>
           </div>
         </div>
@@ -102,137 +127,107 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p><span>Check Our&nbsp;</span> <span class="description-title">Portfolio</span></p>
+        <h2>Productos</h2>
+        <p><span>Todas Las&nbsp;</span> <span class="description-title">Categorías</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
-          </ul><!-- End Portfolio Filters -->
+         
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde App 1">
+                <img src="assets/img/masonry-portfolio/productoUno.png" class="img-fluid" alt="Producto App 1">
+              </a>
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>CARGADORES</h4>
+         
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde Product 1">
+                <img src="assets/img/masonry-portfolio/productoDos.png" class="img-fluid" alt="Producto 1">
+              </a>
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>PARLANTES</h4>
+               
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde Branding 1">
+                <img src="assets/img/masonry-portfolio/productoTres.png" class="img-fluid" alt="Producto Branding 1">
+              </a>
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>AURICULARES</h4>
+              
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde App 2">
+                <img src="assets/img/masonry-portfolio/productoCuatro.png" class="img-fluid" alt="Producto App 2">
+              </a>
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>INFORMÁTICA</h4>
+             
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde Product 2">
+                <img src="assets/img/masonry-portfolio/productoCinco.png" class="img-fluid" alt="Producto 2">
+              </a>
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>CABLES</h4>
+               
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde Branding 2">
+                <img src="assets/img/masonry-portfolio/productoSeis.png" class="img-fluid" alt="Producto Branding 2">
+              </a>
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>ACC. CELULARES</h4>
+              
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde App 3">
+                <img src="assets/img/masonry-portfolio/productoSiete.png" class="img-fluid" alt="Producto App 3">
+              </a>
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>ADAPTADORES</h4>
+             
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+           
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
+              <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" class="portfolio-image-link" target="_blank" rel="noopener noreferrer" aria-label="Ir a la tienda desde Branding 3">
+                <img src="assets/img/masonry-portfolio/productoNueve.png" class="img-fluid" alt="Producto Branding 3">
+              </a>
               <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+                <h4>HERRAMIENTAS</h4>
+               
+                <a href="https://wa.me/5493624216834?text=Hola%2C%20quiero%20ver%20la%20tienda%20online%20de%20TecnoAcces" title="Ver mas" class="details-link" target="_blank" rel="noopener noreferrer">Ver mas</a>
               </div>
             </div><!-- End Portfolio Item -->
-
           </div><!-- End Portfolio Container -->
 
         </div>
@@ -241,54 +236,6 @@
 
     </section><!-- /Portfolio Section -->
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Hard Workers</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
@@ -330,14 +277,14 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clientuno.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/cientdos.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/cienttres.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/cientcuatro.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/cientcinco.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/cientseis.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clientsiete.png" class="img-fluid" alt=""></div>
+           
           </div>
         </div>
 
@@ -351,7 +298,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Nosotros</h2>
-        <p><span>Find Out More</span> <span class="description-title">About Us</span></p>
+        <p><span>Conocé más</span> <span class="description-title"> de Nosotros</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -359,7 +306,7 @@
         <div class="row gy-3">
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" alt="" class="img-fluid">
+            <img src="assets/img/about.png" alt="" class="img-fluid">
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -370,17 +317,17 @@
                 personalizada.</h4>
                 <ul>
                   <li>
-                    <i class="bi bi-diagram-3"></i>
+                  <i class="bi bi-patch-check-fill"></i>
                     <div>
-                      <h4>Ullamco laboris nisi ut aliquip consequat</h4>
-                      <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                      <h4>Calidad certificada en cada producto</h4>
+                      <p>Trabajamos exclusivamente con productos seleccionados. Cada artículo cuenta con garantía oficial, para que compres con total confianza y tranquilidad.</p>
                     </div>
                   </li>
                   <li>
-                    <i class="bi bi-fullscreen-exit"></i>
+            <i class="bi bi-tag-fill"></i>
                     <div>
-                      <h4>Magnam soluta odio exercitationem reprehenderi</h4>
-                      <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                      <h4> El mejor precio, siempre a tu alcance</h4>
+                      <p>Encontrá los mejores precios del mercado. Ofertas claras, sin costos ocultos, para que aproveches al máximo tu presupuesto.</p>
                     </div>
                   </li>
                 </ul>
@@ -399,8 +346,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p><span>Check Our</span> <span class="description-title">Services</span></p>
+        <h2>Servicio</h2>
+        <p><span>En qué </span> <span class="description-title">nos Destacamos</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -410,81 +357,40 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-activity"></i>
+                <i class="bi bi-bag-check-fill"></i>
               </div>
               <a href="#" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
+                <h3>Comprá fácil, desde donde estés</h3>
               </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
-                tempore et consequatur.</p>
+              <p>Navegá nuestro catálogo y realizá tu pedido en minutos desde tu celular 
+o computadora. Una experiencia de compra simple, rápida y sin complicaciones.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-broadcast"></i>
+                <i class="bi bi-truck"></i>
               </div>
               <a href="#" class="stretched-link">
-                <h3>Eosle Commodi</h3>
+                <h3>Envíos gratis en el día — Gran Resistencia</h3>
               </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
-                nesciunt dolorem.</p>
+              <p>Recibí tu pedido el mismo día sin costo adicional en toda el área 
+metropolitana del Gran Resistencia. Comprás hoy, lo tenés hoy.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-easel"></i>
+                <i class="bi bi-headset"></i>
               </div>
               <a href="#" class="stretched-link">
-                <h3>Ledo Markt</h3>
+                <h3>Te ayudamos a elegir lo que necesitás</h3>
               </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
-                eos earum corrupti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
-                adipisci neque.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
-                alias eius labore.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
-                recusandae ducimus enim.</p>
-              <a href="#" class="stretched-link"></a>
+              <p>Nuestro equipo está listo para orientarte y resolver todas tus dudas 
+antes de comprar. Asesoramiento personalizado y honesto, sin tecnicismos 
+innecesarios.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -501,7 +407,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
+      <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
@@ -519,9 +425,9 @@
           </script>
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
+         <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+           <!--     <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
@@ -535,9 +441,9 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
+            </div>  -->
+          
+   <!--         <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
@@ -553,9 +459,9 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
 
-            <div class="swiper-slide">
+    <!--        <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
@@ -571,9 +477,9 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>  -->
 
-            <div class="swiper-slide">
+    <!--        <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
@@ -590,9 +496,9 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
 
-            <div class="swiper-slide">
+   <!--         <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
@@ -609,8 +515,8 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>  -->
+        
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -624,8 +530,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>F.A.Q</h2>
-        <p><span>Frequently Asked</span> <span class="description-title">Questions</span></p>
+        <h2>Preguntas?</h2>
+        <p><span>Respuestas a las</span> <span class="description-title">Preguntas más Comunes</span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -637,64 +543,70 @@
             <div class="faq-container">
 
               <div class="faq-item faq-active">
-                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                <h3>¿En qué horario se realizan los envíos?</h3>
                 <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                    gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                  <p>Los envíos se realizan de lunes a sábados entre las 14:00 y las 18:00 hs. 
+Si realizás tu compra dentro de ese horario, tu pedido será entregado 
+al día siguiente en el mismo rango horario.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
+                <h3>¿Cuáles son los métodos de pago aceptados?</h3>
                 <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet
-                    id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                  <p>Podés abonar tu compra de dos formas:
+
+→ Directamente desde la tienda online a través de Mercado Pago, 
+  con todos los medios de pago disponibles.
+
+→ Enviando un mensaje con el producto deseado y abonando mediante 
+  efectivo o transferencia bancaria, con un descuento especial 
+  por esta modalidad.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                <h3> ¿Los productos tienen garantía?</h3>
                 <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                    elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
-                    eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
-                    sed odio morbi quis</p>
+                  <p>¡Sí! Todos nuestros productos cuentan con garantía oficial. 
+La misma está sujeta al uso correcto del producto, cubriendo 
+defectos de fabricación y fallas técnicas no ocasionadas por el usuario.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                <h3>¿A qué zonas realizan envíos?</h3>
                 <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet
-                    id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                  <p>Realizamos envíos sin costo en las siguientes localidades 
+del Gran Resistencia:
+
+→ Resistencia
+→ Fontana
+→ Barranqueras
+→ Puerto Vilelas
+
+El envío es totalmente gratuito, previa confirmación 
+del domicilio mediante ubicación GPS.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
+                <h3>¿Qué hago si mi pedido llega en mal estado?</h3>
                 <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in.
-                    Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est.
-                    Purus gravida quis blandit turpis cursus in</p>
+                  <p>Si al recibir tu pedido notás que el producto presenta algún daño 
+o no es lo que solicitaste, comunicate con nosotros de inmediato 
+por nuestros canales de atención. Gestionamos el cambio o devolución 
+de forma rápida y sin complicaciones, porque tu satisfacción 
+es nuestra prioridad.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
-              <div class="faq-item">
-                <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
-                <div class="faq-content">
-                  <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi.
-                    Distinctio ipsam dolore et.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
+             
             </div>
 
           </div><!-- End Faq Column-->
@@ -710,8 +622,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
+        <h2>Contacto</h2>
+        <p><span>Necesitás Ayuda?</span> <span class="description-title">Contactanos</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -741,7 +653,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email</h3>
-                  <p>info@example.com</p>
+                  <p>tecnoacceschaco@outlook.com</p>
                 </div>
               </div><!-- End Info Item -->
               <iframe
@@ -752,36 +664,31 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+            <form id="contact-form" method="post" class="php-email-form" data-aos="fade-up"
               data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label for="name-field" class="pb-2">Nombre</label>
+                  <input type="text" name="name" id="form-control" class="form-control" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <label for="email-field" class="pb-2">Email</label>
+                  <input type="email" class="form-control" name="email" id="form-control" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label for="subject-field" class="pb-2">Asunto</label>
+                  <input type="text" class="form-control" name="subject" id="form-control" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label for="message-field" class="pb-2">Mensaje</label>
+                  <textarea class="form-control" name="message" rows="10" id="form-control" required=""></textarea>
                 </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                  <button type="submit">Enviar mensaje</button>
                 </div>
 
               </div>
@@ -803,44 +710,44 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">BizLand</span>
+           <p><span>Tecno</span> <span class="description-title">Acces</span></p>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>Av. Soberanía Nacional 2555</p>
+            <p>Resistencia - Chaco</p>
+            <p class="mt-3"><strong>Teléfono:</strong> <span>362-4216834</span></p>
+            <p><strong>Email:</strong> <span>tecnoacceschaco@outlook.com</span></p>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Inicio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">Nosotros</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Productos</a></li>
+            
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Nuestros Servicios</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i>Compra Fácil</a></li>
+            <li><i class="bi bi-chevron-right"></i>Envíos sin Cargo</a></li>
+            <li><i class="bi bi-chevron-right"></i>Asesoramiento</a></li>
+          
           </ul>
         </div>
 
         <div class="col-lg-4 col-md-12">
-          <h4>Follow Us</h4>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+          <h4>Seguínos</h4>
+          <p>Enterate de todas la novedades a través de nuestras redes</p>
           <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+          
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/tecno.acces.chaco/"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.link/xfzeci"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
@@ -848,7 +755,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Tecno Acces</strong> <span>Todos los derechos reservados</span></p>
+      <p>© <span>Copyright 2026</span> <strong class="px-1 sitename">Tecno Acces</strong> <span>Todos los derechos reservados</span></p>
       <div class="credits">
      
         Designed by <a href="https://webimpulse.vercel.app/">Web Impulse</a>
@@ -861,6 +768,12 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.link/xfzeci" id="whatsapp-chat" class="whatsapp-chat d-flex align-items-center justify-content-center"
+    target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Tecno Acces">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <!-- Preloader -->
   <div id="preloader">
     <div></div>
@@ -870,6 +783,31 @@
   </div>
 
   <!-- Vendor JS Files -->
+
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "tUjsoNsVjSrluTUMD",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_qedll4t', 'template_qua5tbg', this)
+                .then(() => {
+                        alert ('MENSAJE ENVIADO!');
+                        document.getElementById('contact-form').reset();
+                    }, (error) => {
+                        alert('FAILED...', error);
+                    });
+            });
+        }
+    </script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
