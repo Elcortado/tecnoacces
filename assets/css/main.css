@@ -1589,6 +1589,26 @@ section,
   border-radius: 16px;
   backdrop-filter: blur(12px);
   box-shadow: 0 14px 30px rgba(8, 20, 43, 0.22);
+  overflow: hidden;
+  isolation: isolate;
+  animation: portfolio-info-float 4.5s ease-in-out infinite;
+}
+
+.portfolio .portfolio-item .portfolio-info::before {
+  content: "";
+  position: absolute;
+  inset: -30% auto -30% -60%;
+  width: 44%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+  transform: rotate(18deg);
+  animation: portfolio-info-shimmer 3.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info>* {
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
@@ -1666,6 +1686,38 @@ section,
   50% {
     opacity: 1;
     text-shadow: 0 0 18px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes portfolio-info-shimmer {
+  0% {
+    left: -60%;
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.15;
+  }
+
+  50% {
+    left: 118%;
+    opacity: 0.4;
+  }
+
+  100% {
+    left: 118%;
+    opacity: 0;
+  }
+}
+
+@keyframes portfolio-info-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
   }
 }
 
