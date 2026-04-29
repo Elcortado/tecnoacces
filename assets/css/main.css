@@ -946,17 +946,41 @@ section,
 
 .hero .btn-get-started {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), #004bb7);
   font-family: var(--heading-font);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   animation: pulse 1.5s infinite;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 30px;
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
   border-radius: 50px;
-  transition: 300;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid color-mix(in srgb, var(--contrast-color), transparent 72%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-color), transparent 60%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero .btn-get-started::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  bottom: -40%;
+  left: -75%;
+  width: 42%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-22deg);
+  animation: button-shine 2.8s ease-in-out infinite;
+  z-index: -1;
+}
+
+.hero .btn-get-started i {
+  font-size: 20px;
+  line-height: 1;
 }
 @keyframes pulse{
   0% {
@@ -970,11 +994,22 @@ section,
   }
 }
 
+@keyframes button-shine {
+  0% {
+    left: -75%;
+  }
+
+  55%,
+  100% {
+    left: 130%;
+  }
+}
+
 .hero .btn-get-started:hover {
   transform: scale(1.1);
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #004bb7, var(--accent-color));
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--accent-color), transparent 48%);
 }
 
 .hero .btn-watch-video {
@@ -1020,6 +1055,10 @@ section,
   .hero .btn-get-started,
   .hero .btn-watch-video {
     font-size: 13px;
+  }
+
+  .hero .btn-get-started {
+    padding: 11px 20px;
   }
 }
 
